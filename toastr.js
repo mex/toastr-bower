@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Toastr
  * Version 2.0.1
  * Copyright 2012 John Papa and Hans Fjällemark.  
@@ -214,6 +214,9 @@
 				if (options.closeButton && $closeElement) {
 					$closeElement.click(function (event) {
 						event.stopPropagation();
+                        if ($.isFunction(options.oncloseclick)) {
+                            options.oncloseclick();
+                        }
 						hideToast(true);
 					});
 				}
