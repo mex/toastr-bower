@@ -222,8 +222,8 @@
 				}
 
 				if (options.onclick) {
-					$toastElement.click(function () {
-						options.onclick();
+					$toastElement.click(function (e) {
+						options.onclick(e);
 						hideToast();
 					});
 				}
